@@ -2,15 +2,15 @@
     'use strict';
 
     angular.module('app.sample', ['ui.router'])
-        .config(function($stateProvider){
+        .config(['$stateProvider', function($stateProvider){
             $stateProvider
                 .state('sample', {
                     url: '/sample',
                     templateUrl: 'modules/sample/sample.html'
                 });
-        })
-        .controller('SampleController', function($scope){
-            $scope.name = "Seed";
-        });
+        }])
+        .controller('SampleController', ['$scope', function($scope){
+            $scope.name = 'Seed';
+        }]);
 
 })(window.angular);

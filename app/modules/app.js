@@ -2,8 +2,8 @@
     'use strict';
 
     angular.module('app', ['ui.router', 'app.sample'])
-        .config(function($urlRouterProvider){
+        .config(['$urlRouterProvider', function($urlRouterProvider){
             $urlRouterProvider.otherwise('sample');
-        });
+        }]);
 
 })(window.angular);
